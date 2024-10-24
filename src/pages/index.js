@@ -19,7 +19,6 @@ const IndexPage = () => (
             type="radio"
             name="historical-figures"
             value="sojourner-truth"
-            checked="checked"
           />
           <label class="usa-radio__label" for="historical-truth"
             >Sojourner Truth</label
