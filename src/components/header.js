@@ -5,13 +5,7 @@ import React from 'react';
 const Header = ({ children, siteTitle }) => (
   <header className="usa-header usa-header--extended" role="banner">
     <div className="usa-navbar" style={{backgroundColor: '#222c67', padding: '10px'}}>
-      <div className="usa-logo" id="extended-logo">
-        <em className="usa-logo__text">
-          <Link to="/" title="Home" aria-label="Home">
-            <img src="images/FDA_Logo_Icon_White.svg" style={{height:60}} />
-          </Link>
-        </em>
-      </div>
+      <img src="images/FDA_Logo_Icon_White.svg" style={{height:60}} />
       <ul style={{listStyleType: 'none', float: 'right'}}>
         <li><a title="" id="btn-search" style={{borderColor: 'rgb(229,182,17)', borderRadius: '3px', borderStyle: 'solid', borderWidth: '1px', fontFamily: 'Helvetica, Arial', fontSize: '12px', fontWeight: '400', paddingBottom: '5px', paddingLeft: '10px', paddingTop: '5px', paddingRight: '10px', color: 'white'}}>
           <span class="fa fa-search" aria-hidden="true">&nbsp;</span>
