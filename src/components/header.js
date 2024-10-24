@@ -13,7 +13,7 @@ const Header = ({ children, siteTitle }) => (
         </a></li>
         <li style={{display: 'inline-block'}}><a id="menu-btn" style={{borderColor: 'rgb(229,182,17)', borderRadius: '3px', borderStyle: 'solid', borderWidth: '1px', fontFamily: 'Helvetica, Arial', fontSize: '12px', fontWeight: '400', paddingBottom: '5px', paddingLeft: '10px', paddingTop: '5px', paddingRight: '10px', color: 'white'}} href="#primary-nav" data-toggle="collapse" aria-expanded="true">
           <span class="fa fa-bars" aria-hidden="true">&nbsp;</span>
-          <span>Menu</span>
+          <span style={{textDecoration: 'none'}}>Menu</span>
         </a></li>
       </ul>
     </div>
