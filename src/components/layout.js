@@ -45,9 +45,6 @@ const Layout = ({ children }) => {
       </a>
       <Banner />
       <div className="usa-overlay" />
-      <Header siteTitle={title}>
-        <Nav {...{ navigation, secondaryLinks }} />
-      </Header>
       {children}
       <Footer />
     </>
