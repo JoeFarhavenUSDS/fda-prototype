@@ -12,7 +12,16 @@ const Header = ({ children, siteTitle }) => (
           </Link>
         </em>
       </div>
-      <button className="usa-menu-btn">Menu</button>
+      <ul class="margin-top-20 margin-bottom-20">
+        <li><a title="" id="btn-search" style={{borderColor: 'rgb(229,182,17)', borderRadius: '3px', borderStyle: 'solid', borderWidth: '1px', fontFamily: 'Helvetica, Arial', fontSize: '12px', fontWeight: '400', paddingBottom: '5px', paddingLeft: '10px', paddingTop: '5px', paddingRight: '10px', color: 'white'}}>
+          <span class="fa fa-search" aria-hidden="true">&nbsp;</span>
+          <span>Search</span>
+        </a></li>
+        <li><a id="menu-btn" style={{borderColor: 'rgb(229,182,17)', borderRadius: '3px', borderStyle: 'solid', borderWidth: '1px', fontFamily: 'Helvetica, Arial', fontSize: '12px', fontWeight: '400', paddingBottom: '5px', paddingLeft: '10px', paddingTop: '5px', paddingRight: '10px', color: 'white'}} href="#primary-nav" data-toggle="collapse" aria-expanded="true">
+          <span class="fa fa-bars" aria-hidden="true">&nbsp;</span>
+          <span>Menu</span>
+        </a></li>
+      </ul>
     </div>
     {children}
   </header>
