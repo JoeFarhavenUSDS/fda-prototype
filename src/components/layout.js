@@ -40,6 +40,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
       <a className="usa-skipnav" href="#main-content">
         Skip to main content
       </a>
