@@ -4,7 +4,7 @@ import logo from 'uswds/img/logo-img.png';
 const Footer = () => (
   <footer className="usa-footer site-footer" role="contentinfo">
     <div className="footer-section-bottom" style={{backgroundColor: 'rgb(226, 226, 228)', textAlign: 'center', width: '100%'}}>
-      <ul style={{listStyleType: 'none', color: 'rgb(46,41,37)', TextDecorationColor: 'rgb(46,41,37)'}}>
+      <ul style={{listStyleType: 'none', color: 'rgb(46,41,37)', textDecorationColor: 'rgb(46,41,37)'}}>
         <li style={{padding:'10px'}}><a href=''>FDA Archive</a></li>
         <li style={{padding:'10px'}}><a href=''>About FDA</a></li>
         <li style={{padding:'10px'}}><a href=''>Accessibility</a></li>
@@ -16,7 +16,7 @@ const Footer = () => (
         <li style={{padding:'10px'}}><a href=''>HHS.gov</a></li>
         <li style={{padding:'10px'}}><a href=''>USA.gov</a></li>
       </ul>
-      <div style={{backgroundColor: 'rgb(46, 41, 37)', textAlign: 'center', width: '100%'}}>
+      <div style={{backgroundColor: 'rgb(46, 41, 37)', textAlign: 'center', width: '100%', color: 'white', textDecorationColor: 'white', borderColor: 'rgb(204, 204, 204)', borderRadius: '4px', borderWidth: '1px', borderStyle: 'solid', paddingBottom: '5px', paddingLeft: '10px', paddingRight: '10px', paddingTop: '5px', verticalAlign: 'middle', lineHeight: '20px'}}>
         <a href="">Contact FDA</a>
       </div>
     </div>
