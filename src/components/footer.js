@@ -4,7 +4,7 @@ import logo from 'uswds/img/logo-img.png';
 const Footer = () => (
   <footer className="usa-footer site-footer" role="contentinfo">
     <div className="footer-section-bottom" style={{backgroundColor: 'rgb(226, 226, 228)', textAlign: 'center', width: '100%'}}>
-      <ul style={{listStyleType: 'none', color: 'black !important'}}>
+      <ul style={{listStyleType: 'none', color: 'rgb(46,41,37)', TextDecorationColor: 'rgb(46,41,37)'}}>
         <li style={{padding:'10px'}}><a href=''>FDA Archive</a></li>
         <li style={{padding:'10px'}}><a href=''>About FDA</a></li>
         <li style={{padding:'10px'}}><a href=''>Accessibility</a></li>
