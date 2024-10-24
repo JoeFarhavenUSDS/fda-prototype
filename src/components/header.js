@@ -12,7 +12,7 @@ const Header = ({ children, siteTitle }) => (
           </Link>
         </em>
       </div>
-      <ul style={{listStyleImage: 'none'}}>
+      <ul style={{listStyleType: 'none'}}>
         <li><a title="" id="btn-search" style={{borderColor: 'rgb(229,182,17)', borderRadius: '3px', borderStyle: 'solid', borderWidth: '1px', fontFamily: 'Helvetica, Arial', fontSize: '12px', fontWeight: '400', paddingBottom: '5px', paddingLeft: '10px', paddingTop: '5px', paddingRight: '10px', color: 'white'}}>
           <span class="fa fa-search" aria-hidden="true">&nbsp;</span>
           <span>Search</span>
