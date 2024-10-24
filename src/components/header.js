@@ -8,7 +8,7 @@ const Header = ({ children, siteTitle }) => (
       <div className="usa-logo" id="extended-logo">
         <em className="usa-logo__text">
           <Link to="/" title="Home" aria-label="Home">
-            <img src="images/FDA_Logo_Icon_White.svg" style={{width:82,height:60}} />
+            <img src="images/FDA_Logo_Icon_White.svg" style={{height:60}} />
           </Link>
         </em>
       </div>
