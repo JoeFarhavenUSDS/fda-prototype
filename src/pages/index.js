@@ -9,7 +9,7 @@ import Highlights from '../components/highlights';
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <form class="usa-form usa-form--large">
+    <form class="usa-form usa-form--large" style="padding:50px;">
       <fieldset class="usa-fieldset">
         <legend class="usa-legend usa-legend">Select one historical figure</legend>
         <div class="usa-radio">
@@ -47,19 +47,6 @@ const IndexPage = () => (
           />
           <label class="usa-radio__label" for="historical-washington"
             >Booker T. Washington</label
-          >
-        </div>
-        <div class="usa-radio">
-          <input
-            class="usa-radio__input"
-            id="historical-carver"
-            type="radio"
-            name="historical-figures"
-            value="george-washington-carver"
-            disabled="disabled"
-          />
-          <label class="usa-radio__label" for="historical-carver"
-            >George Washington Carver</label
           >
         </div>
       </fieldset>
