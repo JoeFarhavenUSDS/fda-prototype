@@ -4,7 +4,7 @@ import React from 'react';
 
 const Header = ({ children, siteTitle }) => (
   <header className="usa-header usa-header--extended" role="banner">
-    <div className="usa-navbar padding-5" style={{backgroundColor: '#222c67'}}>
+    <div className="usa-navbar" style={{backgroundColor: '#222c67', padding: '10px'}}>
       <div className="usa-logo" id="extended-logo">
         <em className="usa-logo__text">
           <Link to="/" title="Home" aria-label="Home">
