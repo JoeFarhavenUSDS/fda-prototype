@@ -9,7 +9,7 @@ import Highlights from '../components/highlights';
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <form class="usa-form usa-form--large" style="padding:50px;">
+    <form class="usa-form usa-form--large">
       <fieldset class="usa-fieldset">
         <legend class="usa-legend usa-legend">Select one historical figure</legend>
         <div class="usa-radio">
