@@ -45,7 +45,8 @@ const Layout = ({ children }) => {
       </a>
       <Banner />
       <div className="usa-overlay" />
-	{children}
+      <Header siteTitle={title}>
+      {children}
       <Footer />
     </>
   );
