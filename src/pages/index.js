@@ -11,6 +11,7 @@ const IndexPage = () => {
 
   const handleChange = (event) => {
     setQuestionOne(event.target.value);
+    window.alert("Event: " + event.target.value) + " / Question: " + questionOne);
   };
   
   return (
