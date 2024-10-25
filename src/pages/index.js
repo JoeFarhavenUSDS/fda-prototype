@@ -79,45 +79,47 @@ const IndexPage = () => {
           </div>
         }
         { questionOne === 'B' && 
-          <fieldset class="usa-fieldset">
-            <legend class="usa-legend">Question 3</legend>
-            <div class="usa-checkbox">
-              <input
-                class="usa-checkbox__input usa-checkbox__input--tile"
-                id="question-three-A"
-                type="checkbox"
-                name="question-three"
-                value="A"
-                checked="checked"
-              />
-              <label class="usa-checkbox__label" for="question-three-A"
-                >Option A</label>
-            </div>
-            <div class="usa-checkbox">
-              <input
-                class="usa-checkbox__input usa-checkbox__input--tile"
-                id="quesiton-three-B"
-                type="checkbox"
-                name="quesiton-three"
-                value="B"
-              />
-              <label class="usa-checkbox__label" for="question-three-B"
-                >Option B</label
-              >
-            </div>
-            <div class="usa-checkbox">
-              <input
-                class="usa-checkbox__input usa-checkbox__input--tile"
-                id="quesiton-three-C"
-                type="checkbox"
-                name="question-three"
-                value="C"
-              />
-              <label class="usa-checkbox__label" for="question-three-C"
-                >Option C</label
-              >
-            </div>
-          </fieldset>
+          <div class="usa-form-group">
+            <fieldset class="usa-fieldset">
+              <legend class="usa-legend"><b>Question 3</b></legend>
+              <div class="usa-checkbox">
+                <input
+                  class="usa-checkbox__input usa-checkbox__input--tile"
+                  id="question-three-A"
+                  type="checkbox"
+                  name="question-three"
+                  value="A"
+                  checked="checked"
+                />
+                <label class="usa-checkbox__label" for="question-three-A"
+                  >Option A</label>
+              </div>
+              <div class="usa-checkbox">
+                <input
+                  class="usa-checkbox__input usa-checkbox__input--tile"
+                  id="quesiton-three-B"
+                  type="checkbox"
+                  name="quesiton-three"
+                  value="B"
+                />
+                <label class="usa-checkbox__label" for="question-three-B"
+                  >Option B</label
+                >
+              </div>
+              <div class="usa-checkbox">
+                <input
+                  class="usa-checkbox__input usa-checkbox__input--tile"
+                  id="quesiton-three-C"
+                  type="checkbox"
+                  name="question-three"
+                  value="C"
+                />
+                <label class="usa-checkbox__label" for="question-three-C"
+                  >Option C</label
+                >
+              </div>
+            </fieldset>
+          </div>
         }
         <div style={{width: '100%', textAlign: 'right'}}>
           <button class="usa-button" type="button">Next</button>
