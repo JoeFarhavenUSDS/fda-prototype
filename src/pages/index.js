@@ -10,6 +10,7 @@ const IndexPage = () => {
   const [questionOne, setQuestionOne] = useState('');
 
   const handleChange = (event) => {
+    console.log("Event: ", event);
     setQuestionOne(event.target.value);
   };
   
