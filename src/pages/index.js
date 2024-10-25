@@ -9,9 +9,11 @@ import Highlights from '../components/highlights';
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+    <h1>Report a problem</h1>
+    <p>Here's where we set expectations of what we will do with reports, and what folks can expect.</p>
     <form class="usa-form usa-form--large padding-10">
       <fieldset class="usa-fieldset">
-        <legend class="usa-legend usa-legend">Select one historical figure</legend>
+        <legend class="usa-legend usa-legend"><b>Question 1</b></legend>
         <div class="usa-radio">
           <input
             class="usa-radio__input"
@@ -21,7 +23,7 @@ const IndexPage = () => (
             value="sojourner-truth"
           />
           <label class="usa-radio__label" for="historical-truth"
-            >Sojourner Truth</label
+            >Option A</label
           >
         </div>
         <div class="usa-radio">
@@ -33,7 +35,7 @@ const IndexPage = () => (
             value="frederick-douglass"
           />
           <label class="usa-radio__label" for="historical-douglass"
-            >Frederick Douglass</label
+            >Option B</label
           >
         </div>
         <div class="usa-radio">
@@ -45,10 +47,28 @@ const IndexPage = () => (
             value="booker-t-washington"
           />
           <label class="usa-radio__label" for="historical-washington"
-            >Booker T. Washington</label
+            >Option C</label
           >
         </div>
       </fieldset>
+      <div class="usa-form-group">
+        <label class="usa-label" id="appointment-date-label" for="appointment-date"
+          ><b>Question 2</b></label
+        >
+        <div class="usa-hint" id="appointment-date-hint">mm/dd/yyyy</div>
+        <div class="usa-date-picker">
+          <input
+            class="usa-input"
+            id="appointment-date"
+            name="appointment-date"
+            aria-labelledby="appointment-date-label"
+            aria-describedby="appointment-date-hint"
+          />
+        </div>
+      </div>
+      <div style={{width: '100%', textAlign: 'right'}}>
+        <button class="usa-button" type="button">Next</button>
+      </div>
     </form>
   </Layout>
 );
