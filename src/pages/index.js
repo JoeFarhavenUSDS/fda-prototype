@@ -60,7 +60,7 @@ const IndexPage = () => {
               value="C"
               onChange={handleChange}
             />
-            <label class="usa-radio__label" for="quesiton-one-C"
+            <label class="usa-radio__label" for="question-one-C"
               >Option C</label
             >
           </div>
