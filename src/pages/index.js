@@ -11,7 +11,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <form class="usa-form usa-form--large padding-10">
+      <form class="usa-form usa-form--large padding-9" style={{paddingTop: '0'}}>
         <h1>Report a problem</h1>
         <p>Here's where we set expectations of what we will do with reports, and what folks can expect.</p>
         <fieldset class="usa-fieldset">
