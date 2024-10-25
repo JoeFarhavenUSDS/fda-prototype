@@ -32,7 +32,7 @@ const IndexPage = () => {
               value="A"
               onChange={handleChange}
             />
-            <label class="usa-radio__label" for="historical-truth"
+            <label class="usa-radio__label" for="question-one-A"
               >Option A</label
             >
           </div>
@@ -41,12 +41,12 @@ const IndexPage = () => {
               class="usa-radio__input"
               id="question-one-B"
               type="radio"
-              name="quesiton-one"
+              name="question-one"
               checked={questionOne === 'B'}
               value="B"
               onChange={handleChange}
             />
-            <label class="usa-radio__label" for="historical-douglass"
+            <label class="usa-radio__label" for="question-one-B"
               >Option B</label
             >
           </div>
@@ -60,7 +60,7 @@ const IndexPage = () => {
               value="C"
               onChange={handleChange}
             />
-            <label class="usa-radio__label" for="historical-washington"
+            <label class="usa-radio__label" for="quesiton-one-C"
               >Option C</label
             >
           </div>
