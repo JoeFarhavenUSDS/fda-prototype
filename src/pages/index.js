@@ -27,9 +27,9 @@ const IndexPage = () => {
               id="question-one-A"
               type="radio"
               name="question-one"
-              checked={this.questionOne === 'A'}
+              checked={questionOne === 'A'}
               value="A"
-              onChange={this.handleChange}
+              onChange={handleChange}
             />
             <label class="usa-radio__label" for="historical-truth"
               >Option A</label
@@ -41,9 +41,9 @@ const IndexPage = () => {
               id="question-one-B"
               type="radio"
               name="quesiton-one"
-              checked={this.questionOne === 'B'}
+              checked={questionOne === 'B'}
               value="B"
-              onChange={this.handleChange}
+              onChange={handleChange}
             />
             <label class="usa-radio__label" for="historical-douglass"
               >Option B</label
@@ -55,16 +55,16 @@ const IndexPage = () => {
               id="question-one-C"
               type="radio"
               name="question-one"
-              checked={this.questionOne === 'C'}
+              checked={questionOne === 'C'}
               value="C"
-              onChange={this.handleChange}
+              onChange={handleChange}
             />
             <label class="usa-radio__label" for="historical-washington"
               >Option C</label
             >
           </div>
         </fieldset>
-        { this.questionOne === 'A' && 
+        { questionOne === 'A' && 
           <div class="usa-form-group">
             <label class="usa-label" id="question-two-label" for="question-two"
               ><b>Question 2</b></label
@@ -77,7 +77,7 @@ const IndexPage = () => {
             ></textarea>
           </div>
         }
-        { this.questionOne === 'B' && 
+        { questionOne === 'B' && 
           <fieldset class="usa-fieldset">
             <legend class="usa-legend">Question 3</legend>
             <div class="usa-checkbox">
