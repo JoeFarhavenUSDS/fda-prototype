@@ -8,6 +8,11 @@ import Highlights from '../components/highlights';
 
 const IndexPage = () => {
   const [questionOne, setQuestionOne] = useState('');
+
+  const handleChange = (event) => {
+    setQuestionOne(event.target.value);
+  };
+  
   return (
     <Layout>
       <SEO title="Home" />
@@ -22,8 +27,9 @@ const IndexPage = () => {
               id="question-one-A"
               type="radio"
               name="question-one"
+              checked={questionOne === 'A'}
               value="A"
-              onChange={e => setQuestionOne(e.target.value)}
+              onChange={handleChange}
             />
             <label class="usa-radio__label" for="historical-truth"
               >Option A</label
@@ -35,8 +41,9 @@ const IndexPage = () => {
               id="question-one-B"
               type="radio"
               name="quesiton-one"
+              checked={questionOne === 'B'}
               value="B"
-              onChange={e => setQuestionOne(e.target.value)}
+              onChange={handleChange}
             />
             <label class="usa-radio__label" for="historical-douglass"
               >Option B</label
@@ -48,8 +55,9 @@ const IndexPage = () => {
               id="question-one-C"
               type="radio"
               name="question-one"
+              checked={questionOne === 'C'}
               value="C"
-              onChange={e => setQuestionOne(e.target.value)}
+              onChange={handleChange}
             />
             <label class="usa-radio__label" for="historical-washington"
               >Option C</label
