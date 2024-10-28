@@ -8,11 +8,16 @@ import Highlights from '../components/highlights';
 
 const IndexPage = () => {
   const [questionOne, setQuestionOne] = useState('');
+  const [questionTwo, setQuestionTwo] = useState('');
+  const [questionThree, setQuestionThree] = useState({});
 
-  const handleChange = (event) => {
-    console.log("Event: ", event);
+  const handleQuestionOneChange = (event) => {
     setQuestionOne(event.target.value);
   };
+
+  const handleQuestionThreeChange = (event) => {
+    setQuestionThree({...questionThree, [event.target.value] : event.target.checked });
+  }
   
   return (
     <Layout>
@@ -30,7 +35,7 @@ const IndexPage = () => {
               name="question-one"
               checked={questionOne === 'A'}
               value="A"
-              onChange={handleChange}
+              onChange={handleQuestionOneChange}
             />
             <label class="usa-radio__label" for="question-one-A"
               >Option A</label
@@ -44,7 +49,7 @@ const IndexPage = () => {
               name="question-one"
               checked={questionOne === 'B'}
               value="B"
-              onChange={handleChange}
+              onChange={handleQuestionOneChange}
             />
             <label class="usa-radio__label" for="question-one-B"
               >Option B</label
@@ -58,7 +63,7 @@ const IndexPage = () => {
               name="question-one"
               checked={questionOne === 'C'}
               value="C"
-              onChange={handleChange}
+              onChange={handleQuestionOneChange}
             />
             <label class="usa-radio__label" for="question-one-C"
               >Option C</label
@@ -75,6 +80,8 @@ const IndexPage = () => {
               class="usa-textarea"
               id="question-two"
               name="question-two"
+              value={questionTwo}
+              onChange={e => setQuestionTwo(e.target.value)}
             ></textarea>
           </div>
         }
@@ -89,7 +96,8 @@ const IndexPage = () => {
                   type="checkbox"
                   name="question-three"
                   value="A"
-                  checked="checked"
+                  checked={questionThree.get('A')}
+                  onChange={handleQuestionThreeChange}
                 />
                 <label class="usa-checkbox__label" for="question-three-A"
                   >Option A</label>
@@ -101,6 +109,8 @@ const IndexPage = () => {
                   type="checkbox"
                   name="quesiton-three"
                   value="B"
+                  checked={questionThree.get('B')}
+                  onChange={handleQuestionThreeChange}
                 />
                 <label class="usa-checkbox__label" for="question-three-B"
                   >Option B</label
@@ -113,6 +123,8 @@ const IndexPage = () => {
                   type="checkbox"
                   name="question-three"
                   value="C"
+                  checked={questionThree.get('C')}
+                  onChange={handleQuestionThreeChange}
                 />
                 <label class="usa-checkbox__label" for="question-three-C"
                   >Option C</label
@@ -122,7 +134,7 @@ const IndexPage = () => {
           </div>
         }
         <div style={{width: '100%', textAlign: 'right'}}>
-          <button class="usa-button" type="button">Next</button>
+          <button class="usa-button" type="button" disabled={!questionOne || (quesitonOne === 'A' && !questionTwo)}>Next</button>
         </div>
       </form>
     </Layout>
