@@ -9,8 +9,8 @@ import Highlights from '../components/highlights';
 const IndexPage = () => {
   const [questionOne, setQuestionOne] = useState('');
   const [questionTwo, setQuestionTwo] = useState('');
-  const [questionThree, setQuestionThree] = useState({});
-  const [questionFour, setQuestionFour] = useState({});
+  const [questionThree, setQuestionThree] = useState(new Map());
+  const [questionFour, setQuestionFour] = useState('');
 
   const handleQuestionOneChange = (event) => {
     setQuestionOne(event.target.value);
