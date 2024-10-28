@@ -10,6 +10,7 @@ const IndexPage = () => {
   const [questionOne, setQuestionOne] = useState('');
   const [questionTwo, setQuestionTwo] = useState('');
   const [questionThree, setQuestionThree] = useState({});
+  const [questionFour, setQuestionFour] = useState({});
 
   const handleQuestionOneChange = (event) => {
     setQuestionOne(event.target.value);
@@ -69,6 +70,20 @@ const IndexPage = () => {
               >Option C</label
             >
           </div>
+          <div class="usa-radio">
+            <input
+              class="usa-radio__input"
+              id="question-one-D"
+              type="radio"
+              name="question-one"
+              checked={questionOne === 'D'}
+              value="D"
+              onChange={handleQuestionOneChange}
+            />
+            <label class="usa-radio__label" for="question-one-D"
+              >Option D</label
+            >
+          </div>
         </fieldset>
         { questionOne === 'A' && 
           <div class="usa-form-group">
@@ -105,9 +120,9 @@ const IndexPage = () => {
               <div class="usa-checkbox">
                 <input
                   class="usa-checkbox__input usa-checkbox__input--tile"
-                  id="quesiton-three-B"
+                  id="question-three-B"
                   type="checkbox"
-                  name="quesiton-three"
+                  name="question-three"
                   value="B"
                   checked={questionThree.get('B')}
                   onChange={handleQuestionThreeChange}
@@ -119,7 +134,7 @@ const IndexPage = () => {
               <div class="usa-checkbox">
                 <input
                   class="usa-checkbox__input usa-checkbox__input--tile"
-                  id="quesiton-three-C"
+                  id="question-three-C"
                   type="checkbox"
                   name="question-three"
                   value="C"
@@ -133,8 +148,23 @@ const IndexPage = () => {
             </fieldset>
           </div>
         }
+        { questionOne === 'D' && 
+          <div class="usa-form-group">
+            <label class="usa-label" id="question-four-label" for="question-four"
+              ><b>Question 4</b></label
+            >
+            <div class="usa-hint" id="question-four-hint">Prompt text</div>
+            <textarea
+              class="usa-textarea"
+              id="question-four"
+              name="question-four"
+              value={questionFour}
+              onChange={e => setQuestionFour(e.target.value)}
+            ></textarea>
+          </div>
+        }
         <div style={{width: '100%', textAlign: 'right'}}>
-          <button class="usa-button" type="button" disabled={!questionOne || (quesitonOne === 'A' && !questionTwo)}>Next</button>
+          <button class="usa-button" type="button" disabled={!questionOne || (questionOne === 'A' && !questionTwo)}>Next</button>
         </div>
       </form>
     </Layout>
