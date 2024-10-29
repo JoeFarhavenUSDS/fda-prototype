@@ -255,7 +255,7 @@ const IndexPage = () => {
               data-close-modal
             >
               <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
-                <use xlink:href="/assets/img/sprite.svg#close"></use>
+                <use xlinkHref="/assets/img/sprite.svg#close"></use>
               </svg>
             </button>
           </div>
