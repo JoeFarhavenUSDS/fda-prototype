@@ -157,67 +157,69 @@ const IndexPage = () => {
           </div>
         }
         { questionOne === 'D' && 
-          <fieldset class="usa-fieldset">
-            <legend class="usa-legend">Question 4</legend>
-            <span class="usa-hint" id="quesiton-four-hint">For example: January 19 2000</span>
-            <div class="usa-memorable-date">
-              <div class="usa-form-group usa-form-group--month usa-form-group--select">
-                <label class="usa-label" for="question-four-month">Month</label>
-                <select
-                  class="usa-select"
-                  id="question-four-month"
-                  name="question-four-month"
-                  aria-describedby="question-four-hint"
-                  value={questionFourMonth}
-                  onChange={e => setQuestionFourMonth(e.target.value)}
-                  style={{width: "15rem"}}
-                >
-                  <option value>- Select -</option>
-                  <option value="1">January</option>
-                  <option value="2">February</option>
-                  <option value="3">March</option>
-                  <option value="4">April</option>
-                  <option value="5">May</option>
-                  <option value="6">June</option>
-                  <option value="7">July</option>
-                  <option value="8">August</option>
-                  <option value="9">September</option>
-                  <option value="10">October</option>
-                  <option value="11">November</option>
-                  <option value="12">December</option>
-                </select>
+          <div class="usa-form-group">
+            <fieldset class="usa-fieldset">
+              <legend class="usa-legend"><b>Question 4</b></legend>
+              <span class="usa-hint" id="quesiton-four-hint">For example: January 19 2000</span>
+              <div class="usa-memorable-date">
+                <div class="usa-form-group usa-form-group--month usa-form-group--select" style={{width: "15rem"}}>
+                  <label class="usa-label" for="question-four-month">Month</label>
+                  <select
+                    class="usa-select"
+                    id="question-four-month"
+                    name="question-four-month"
+                    aria-describedby="question-four-hint"
+                    value={questionFourMonth}
+                    onChange={e => setQuestionFourMonth(e.target.value)}
+                    style={{width: "15rem"}}
+                  >
+                    <option value>- Select -</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                  </select>
+                </div>
+                <div class="usa-form-group usa-form-group--day">
+                  <label class="usa-label" for="question-four-day">Day</label>
+                  <input
+                    class="usa-input"
+                    aria-describedby="question-four-hint"
+                    id="question-four-day"
+                    name="question-four-day"
+                    maxlength="2"
+                    pattern="[0-9]*"
+                    inputmode="numeric"
+                    value={questionFourDay}
+                    onChange={e => setQuestionFourDay(e.target.value)}
+                  />
+                </div>
+                <div class="usa-form-group usa-form-group--year">
+                  <label class="usa-label" for="question-four-year">Year</label>
+                  <input
+                    class="usa-input"
+                    aria-describedby="question-four-hint"
+                    id="question-four-year"
+                    name="question-four-year"
+                    minlength="4"
+                    maxlength="4"
+                    pattern="[0-9]*"
+                    inputmode="numeric"
+                    value={questionFourYear}
+                    onChange={e => setQuestionFourYear(e.target.value)}
+                  />
+                </div>
               </div>
-              <div class="usa-form-group usa-form-group--day">
-                <label class="usa-label" for="question-four-day">Day</label>
-                <input
-                  class="usa-input"
-                  aria-describedby="question-four-hint"
-                  id="question-four-day"
-                  name="question-four-day"
-                  maxlength="2"
-                  pattern="[0-9]*"
-                  inputmode="numeric"
-                  value={questionFourDay}
-                  onChange={e => setQuestionFourDay(e.target.value)}
-                />
-              </div>
-              <div class="usa-form-group usa-form-group--year">
-                <label class="usa-label" for="question-four-year">Year</label>
-                <input
-                  class="usa-input"
-                  aria-describedby="question-four-hint"
-                  id="question-four-year"
-                  name="question-four-year"
-                  minlength="4"
-                  maxlength="4"
-                  pattern="[0-9]*"
-                  inputmode="numeric"
-                  value={questionFourYear}
-                  onChange={e => setQuestionFourYear(e.target.value)}
-                />
-              </div>
-            </div>
-          </fieldset>
+            </fieldset>
+          </div>
         }
         <div style={{width: '100%', textAlign: 'right'}}>
           <button class="usa-button" type="button" onClick={handleNextClickScreen1}>Next</button>
