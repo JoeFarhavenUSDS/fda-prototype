@@ -170,6 +170,7 @@ const IndexPage = () => {
                   aria-describedby="question-four-hint"
                   value={questionFourMonth}
                   onChange={e => setQuestionFourMonth(e.target.value)}
+                  style={{width: "15rem"}}
                 >
                   <option value>- Select -</option>
                   <option value="1">January</option>
