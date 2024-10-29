@@ -260,7 +260,6 @@ const IndexPage = () => {
             </button>
           </div>
         </div>
-      </div>
     </Layout>
   );
 };
