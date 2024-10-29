@@ -222,7 +222,7 @@ const IndexPage = () => {
           <button class="usa-button" type="button" onClick={handleNextClickScreen1}>Next</button>
         </div>
       </form>
-      <div
+      <div class="usa-modal-wrapper"><div
           class="usa-modal"
           id="example-modal-1"
           aria-labelledby="modal-1-heading"
@@ -259,7 +259,7 @@ const IndexPage = () => {
               </svg>
             </button>
           </div>
-        </div>
+        </div></div>
     </Layout>
   );
 };
