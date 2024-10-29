@@ -222,34 +222,6 @@ const IndexPage = () => {
           <button class="usa-button" type="button" onClick={handleNextClickScreen1}>Next</button>
         </div>
       </form>
-      <div
-          class="usa-modal"
-          id="example-modal-1"
-          aria-labelledby="modal-1-heading"
-          aria-describedby="modal-1-description"
-        >
-          <div class="usa-modal__content">
-            <div class="usa-modal__main">
-              <h2 class="usa-modal__heading" id="modal-1-heading">
-                Missing information
-              </h2>
-              <div class="usa-prose">
-                <p id="modal-1-description">
-                  Please complete the required questions in order to continue.
-                </p>
-              </div>
-              <div class="usa-modal__footer">
-                <ul class="usa-button-group">
-                  <li class="usa-button-group__item">
-                    <button type="button" class="usa-button" data-close-modal>
-                      Continue
-                    </button>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
     </Layout>
   );
 };
