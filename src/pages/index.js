@@ -162,7 +162,7 @@ const IndexPage = () => {
               <legend class="usa-legend"><b>Question 4</b></legend>
               <span class="usa-hint" id="quesiton-four-hint">For example: January 19 2000</span>
               <div class="usa-memorable-date">
-                <div class="usa-form-group usa-form-group--month usa-form-group--select" style={{width: "15rem"}}>
+                <div class="usa-form-group usa-form-group--month usa-form-group--select" style={{width: "8rem"}}>
                   <label class="usa-label" for="question-four-month">Month</label>
                   <select
                     class="usa-select"
