@@ -222,7 +222,7 @@ const IndexPage = () => {
           <button class="usa-button" type="button" onClick={handleNextClickScreen1}>Next</button>
         </div>
       </form>
-      <div class="usa-modal-wrapper"><div
+      <div
           class="usa-modal"
           id="example-modal-1"
           aria-labelledby="modal-1-heading"
@@ -248,18 +248,8 @@ const IndexPage = () => {
                 </ul>
               </div>
             </div>
-            <button
-              type="button"
-              class="usa-button usa-modal__close"
-              aria-label="Close this window"
-              data-close-modal
-            >
-              <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
-                <use xlinkHref="/assets/img/sprite.svg#close"></use>
-              </svg>
-            </button>
           </div>
-        </div></div>
+        </div>
     </Layout>
   );
 };
