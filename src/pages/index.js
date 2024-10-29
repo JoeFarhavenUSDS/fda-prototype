@@ -23,7 +23,7 @@ const IndexPage = () => {
   };
 
   const handleNextClickScreen1 = (event) => {
-    if (!questionOne || (questionOne === 'A' && !questionTwo) {
+    if (!questionOne || (questionOne === 'A' && !questionTwo)) {
       // Display an error
     }
   };
