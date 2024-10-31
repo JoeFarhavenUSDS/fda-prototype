@@ -248,7 +248,7 @@ const IntakePage = () => {
                       onChange={e => setQuestionWhenMonth(e.target.value)}
                       style={{width: "8rem"}}
                     >
-                      <option value>State</option>
+                      <option value>- Select -</option>
                       <option value="1">January</option>
                       <option value="2">February</option>
                       <option value="3">March</option>
@@ -310,7 +310,7 @@ const IntakePage = () => {
                     value={questionWhere}
                     onChange={e => setQuestionWhere(e.target.value)}
               >
-                <option value>- Select -</option>
+                <option value>- State -</option>
               	<option value="AL">Alabama</option>
               	<option value="AK">Alaska</option>
               	<option value="AZ">Arizona</option>
