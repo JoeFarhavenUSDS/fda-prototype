@@ -175,116 +175,118 @@ const IntakePage = () => {
           </div>
         </fieldset>
         { questionWhatProduct === 'x' && 
-          <div class="usa-form-group">
-            <label class="usa-label" id="quesiton-product-photos-label" for="question-product-photos"
-              >Product photos (optional)</label
-            >
-            <span class="usa-hint" id="quesiton-product-photos-hint-above">Include as many photos as possible, including the product, barcodes, packaging, and what was wrong.</span> 
-            <span class="usa-hint" id="question-product-photos-hint"
-              >Select one or more photos</span
-            >
-            <input
-              id="question-product-photos"
-              class="usa-file-input"
-              type="file"
-              name="question-product-photos"
-              aria-describedby="question-product-photose-hint"
-              multiple="multiple"
-              accept="image/*"
-              value={questionProductPhotos}
-              onChange={e => setQuestionProductPhotos(e.target.value)}
-            />
-          </div>
-          <div class="usa-form-group">
-            <label class="usa-label" id="question-product-name-label" for="question-product-name"
-              >Product name<abbr title="required" class="usa-hint usa-hint--required">*</abbr></label
-            >
-            <div class="usa-hint" id="question-product-name-hint">Include as much detail as possible, including the brand</div>
-            <input 
-                class="usa-input" 
-                style={{width: '100%'}} 
-                id="question-product-name" 
-                name="question-product-name"
-                value={questionProductName}
-                onChange={e => setQuestionProductName(e.target.value)}
-            />
-          </div>
-          <div class="usa-form-group">
-            <label class="usa-label" id="question-what-happened-label" for="question-what-happened"
-              >What happened?<abbr title="required" class="usa-hint usa-hint--required">*</abbr></label
-            >
-            <div class="usa-hint" id="question-what-happened-hint">Include what happened, who was involved, and any actions you took.</div>
-            <div class="usa-hint" id="question-what-happened-characters-remaining">{whatHappenedCharactersRemaining} characters remaining</div>
-            <textarea
-              class="usa-textarea"
-              id="question-what-happened"
-              name="question-what-happened"
-              value={questionWhatHappened}
-              onChange={handleQuestionWhatHappenedChange}
-            ></textarea>
-          </div>
-          <div class="usa-form-group">
-            <fieldset class="usa-fieldset">
-              <legend class="usa-legend">When did this happen?<abbr title="required" class="usa-hint usa-hint--required">*</abbr></legend>
-              <span class="usa-hint" id="quesiton-when-hint">If you don’t know, give an approximate date.</span>
-              <div class="usa-memorable-date">
-                <div class="usa-form-group usa-form-group--month usa-form-group--select" style={{width: "8rem"}}>
-                  <label class="usa-label" for="question-when-month">Month</label>
-                  <select
-                    class="usa-select"
-                    id="question-when-month"
-                    name="question-when-month"
-                    aria-describedby="question-when-hint"
-                    value={questionWhenMonth}
-                    onChange={e => setQuestionWhenMonth(e.target.value)}
-                    style={{width: "8rem"}}
-                  >
-                    <option value>- Select -</option>
-                    <option value="1">January</option>
-                    <option value="2">February</option>
-                    <option value="3">March</option>
-                    <option value="4">April</option>
-                    <option value="5">May</option>
-                    <option value="6">June</option>
-                    <option value="7">July</option>
-                    <option value="8">August</option>
-                    <option value="9">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
-                  </select>
+          <div>
+            <div class="usa-form-group">
+              <label class="usa-label" id="quesiton-product-photos-label" for="question-product-photos"
+                >Product photos (optional)</label
+              >
+              <span class="usa-hint" id="quesiton-product-photos-hint-above">Include as many photos as possible, including the product, barcodes, packaging, and what was wrong.</span> 
+              <span class="usa-hint" id="question-product-photos-hint"
+                >Select one or more photos</span
+              >
+              <input
+                id="question-product-photos"
+                class="usa-file-input"
+                type="file"
+                name="question-product-photos"
+                aria-describedby="question-product-photose-hint"
+                multiple="multiple"
+                accept="image/*"
+                value={questionProductPhotos}
+                onChange={e => setQuestionProductPhotos(e.target.value)}
+              />
+            </div>
+            <div class="usa-form-group">
+              <label class="usa-label" id="question-product-name-label" for="question-product-name"
+                >Product name<abbr title="required" class="usa-hint usa-hint--required">*</abbr></label
+              >
+              <div class="usa-hint" id="question-product-name-hint">Include as much detail as possible, including the brand</div>
+              <input 
+                  class="usa-input" 
+                  style={{width: '100%'}} 
+                  id="question-product-name" 
+                  name="question-product-name"
+                  value={questionProductName}
+                  onChange={e => setQuestionProductName(e.target.value)}
+              />
+            </div>
+            <div class="usa-form-group">
+              <label class="usa-label" id="question-what-happened-label" for="question-what-happened"
+                >What happened?<abbr title="required" class="usa-hint usa-hint--required">*</abbr></label
+              >
+              <div class="usa-hint" id="question-what-happened-hint">Include what happened, who was involved, and any actions you took.</div>
+              <div class="usa-hint" id="question-what-happened-characters-remaining">{whatHappenedCharactersRemaining} characters remaining</div>
+              <textarea
+                class="usa-textarea"
+                id="question-what-happened"
+                name="question-what-happened"
+                value={questionWhatHappened}
+                onChange={handleQuestionWhatHappenedChange}
+              ></textarea>
+            </div>
+            <div class="usa-form-group">
+              <fieldset class="usa-fieldset">
+                <legend class="usa-legend">When did this happen?<abbr title="required" class="usa-hint usa-hint--required">*</abbr></legend>
+                <span class="usa-hint" id="quesiton-when-hint">If you don’t know, give an approximate date.</span>
+                <div class="usa-memorable-date">
+                  <div class="usa-form-group usa-form-group--month usa-form-group--select" style={{width: "8rem"}}>
+                    <label class="usa-label" for="question-when-month">Month</label>
+                    <select
+                      class="usa-select"
+                      id="question-when-month"
+                      name="question-when-month"
+                      aria-describedby="question-when-hint"
+                      value={questionWhenMonth}
+                      onChange={e => setQuestionWhenMonth(e.target.value)}
+                      style={{width: "8rem"}}
+                    >
+                      <option value>- Select -</option>
+                      <option value="1">January</option>
+                      <option value="2">February</option>
+                      <option value="3">March</option>
+                      <option value="4">April</option>
+                      <option value="5">May</option>
+                      <option value="6">June</option>
+                      <option value="7">July</option>
+                      <option value="8">August</option>
+                      <option value="9">September</option>
+                      <option value="10">October</option>
+                      <option value="11">November</option>
+                      <option value="12">December</option>
+                    </select>
+                  </div>
+                  <div class="usa-form-group usa-form-group--day">
+                    <label class="usa-label" for="question-when-day">Day</label>
+                    <input
+                      class="usa-input"
+                      aria-describedby="question-when-hint"
+                      id="question-when-day"
+                      name="question-when-day"
+                      maxlength="2"
+                      pattern="[0-9]*"
+                      inputmode="numeric"
+                      value={questionWhenDay}
+                      onChange={e => setQuestionWhenDay(e.target.value)}
+                    />
+                  </div>
+                  <div class="usa-form-group usa-form-group--year">
+                    <label class="usa-label" for="question-when-year">Year</label>
+                    <input
+                      class="usa-input"
+                      aria-describedby="question-when-hint"
+                      id="question-when-year"
+                      name="question-when-year"
+                      minlength="4"
+                      maxlength="4"
+                      pattern="[0-9]*"
+                      inputmode="numeric"
+                      value={questionWhenYear}
+                      onChange={e => setQuestionWhenYear(e.target.value)}
+                    />
+                  </div>
                 </div>
-                <div class="usa-form-group usa-form-group--day">
-                  <label class="usa-label" for="question-when-day">Day</label>
-                  <input
-                    class="usa-input"
-                    aria-describedby="question-when-hint"
-                    id="question-when-day"
-                    name="question-when-day"
-                    maxlength="2"
-                    pattern="[0-9]*"
-                    inputmode="numeric"
-                    value={questionWhenDay}
-                    onChange={e => setQuestionWhenDay(e.target.value)}
-                  />
-                </div>
-                <div class="usa-form-group usa-form-group--year">
-                  <label class="usa-label" for="question-when-year">Year</label>
-                  <input
-                    class="usa-input"
-                    aria-describedby="question-when-hint"
-                    id="question-when-year"
-                    name="question-when-year"
-                    minlength="4"
-                    maxlength="4"
-                    pattern="[0-9]*"
-                    inputmode="numeric"
-                    value={questionWhenYear}
-                    onChange={e => setQuestionWhenYear(e.target.value)}
-                  />
-                </div>
-              </div>
-            </fieldset>
+              </fieldset>
+            </div>
           </div>
         }
         { questionWhatProduct === 'B' && 
