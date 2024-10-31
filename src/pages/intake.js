@@ -30,8 +30,7 @@ const IntakePage = () => {
   };
 
   const handleQuestionGenderChange = (event) => {
-    questionGender.set(event.target.value, event.target.checked);
-    setQuestionGender(questionGender);
+    setQuestionGender(map => new Map(map.set(event.target.value, event.target.checked)));
   };
 
   const handleNextClickScreen1 = (event) => {
