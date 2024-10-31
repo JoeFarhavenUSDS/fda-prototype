@@ -180,7 +180,7 @@ const IntakePage = () => {
               <label class="usa-label" id="quesiton-product-photos-label" for="question-product-photos"
                 >Product photos (optional)</label
               >
-              <span class="usa-hint" id="quesiton-product-photos-hint-above">Include as many photos as possible, including the product, barcodes, packaging, and what was wrong.</span> 
+              <span class="usa-hint" id="quesiton-product-photos-hint-above">Include as many photos as possible, including the product, barcodes, packaging, and what was wrong. </span> 
               <span class="usa-hint" id="question-product-photos-hint"
                 >Select one or more photos</span
               >
