@@ -6,7 +6,7 @@ import Hero from '../components/hero';
 import Tagline from '../components/tagline';
 import Highlights from '../components/highlights';
 
-const IndexPage = () => {
+const IntakePage = () => {
   const [questionOne, setQuestionOne] = useState('');
   const [questionTwo, setQuestionTwo] = useState('');
   const [questionThree, setQuestionThree] = useState(new Map());
@@ -229,4 +229,4 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage;
+export default IntakePage;
