@@ -13,7 +13,13 @@ const IntakePage = () => {
   const [questionWhatHappened, setQuestionWhatHappened] = useState('');
   const [whatHappenedCharactersRemaining, setWhatHappenedCharactersRemaining] = useState(4000);
   const [questionWhere, setQuestionWhere] = useState('');
-  const [questionThree, setQuestionThree] = useState(new Map());
+  const [questionCanContact, setQuestionCanContact] = useState('');
+  const [questionFirstName, setQuestionFirstName] = useState('');
+  const [questionLastName, setQuestionLastName] = useState('');
+  const [questionEmail, setQuestionEmail] = useState('');
+  const [questionAgeNumber, setQuestionAgeNumber] = useState('');
+  const [questionAgeUnit, setQuestionAgeUnit] = useState('years');
+  const [questionGender, setQuestionGender] = useState(new Map());
   const [questionWhenMonth, setQuestionWhenMonth] = useState('');
   const [questionWhenDay, setQuestionWhenDay] = useState('');
   const [questionWhenYear, setQuestionWhenYear] = useState('');
@@ -22,12 +28,12 @@ const IntakePage = () => {
     setQuestionWhatProduct(event.target.value);
   };
 
-  const handleQuestionThreeChange = (event) => {
-    setQuestionThree({...questionThree, [event.target.value] : event.target.checked });
+  const handleQuestionGenderChange = (event) => {
+    setQuestionGender({...questionGender, [event.target.value] : event.target.checked });
   };
 
   const handleNextClickScreen1 = (event) => {
-    if (!questionWhatProduct || (questionWhatProduct === 'A' && !questionTwo)) {
+    if (!questionWhatProduct) {
       // Display an error
     }
   };
@@ -241,7 +247,7 @@ const IntakePage = () => {
                       onChange={e => setQuestionWhenMonth(e.target.value)}
                       style={{width: "8rem"}}
                     >
-                      <option value>- Select -</option>
+                      <option value>State</option>
                       <option value="1">January</option>
                       <option value="2">February</option>
                       <option value="3">March</option>
@@ -363,54 +369,206 @@ const IntakePage = () => {
                 <option value="VI">Virgin Islands</option>
               </select>
             </div>
-          </div>
-        }
-        { questionWhatProduct === 'B' && 
-          <div class="usa-form-group">
             <fieldset class="usa-fieldset">
-              <legend class="usa-legend"><b>Question 3</b> <span class="usa-hint">(optional)</span></legend>
-              <div class="usa-checkbox">
+              <legend class="usa-legend usa-legend">Can we contact you with any follow up questions? (optional)</legend>
+              <div class="usa-radio">
                 <input
-                  class="usa-checkbox__input usa-checkbox__input--tile"
-                  id="question-three-A"
-                  type="checkbox"
-                  name="question-three"
-                  value="A"
-                  checked={questionThree.get('A')}
-                  onChange={handleQuestionThreeChange}
+                  class="usa-radio__input"
+                  id="question-can-contact-yes"
+                  type="radio"
+                  name="question-can-contact"
+                  checked={questionCanContact === 'yes'}
+                  value="yes"
+                  onChange={e => setQuestionCanContact(e.target.value)}
                 />
-                <label class="usa-checkbox__label" for="question-three-A"
-                  >Option A</label>
-              </div>
-              <div class="usa-checkbox">
-                <input
-                  class="usa-checkbox__input usa-checkbox__input--tile"
-                  id="question-three-B"
-                  type="checkbox"
-                  name="question-three"
-                  value="B"
-                  checked={questionThree.get('B')}
-                  onChange={handleQuestionThreeChange}
-                />
-                <label class="usa-checkbox__label" for="question-three-B"
-                  >Option B</label
+                <label class="usa-radio__label" for="question-can-contact-yes"
+                  >Yes</label
                 >
               </div>
-              <div class="usa-checkbox">
+              <div class="usa-radio">
                 <input
-                  class="usa-checkbox__input usa-checkbox__input--tile"
-                  id="question-three-C"
-                  type="checkbox"
-                  name="question-three"
-                  value="C"
-                  checked={questionThree.get('C')}
-                  onChange={handleQuestionThreeChange}
+                  class="usa-radio__input"
+                  id="question-can-contact-no"
+                  type="radio"
+                  name="question-can-contact"
+                  checked={questionCanContact === 'no'}
+                  value="no"
+                  onChange={e => setQuestionCanContact(e.target.value)}
                 />
-                <label class="usa-checkbox__label" for="question-three-C"
-                  >Option C</label
+                <label class="usa-radio__label" for="question-can-contact-no"
+                  >No</label
                 >
               </div>
             </fieldset>
+            { questionCanContact === 'yes' && 
+              <div class="usa-form-group">
+                <label class="usa-label" id="question-first-name-label" for="question-first-name"
+                  >First or given name (optional)</label
+                >
+                <div class="usa-hint" id="question-first-name-hint">For example, Jose, Darren, or Mai</div>
+                <input 
+                    class="usa-input" 
+                    style={{width: '100%'}} 
+                    id="question-first-name" 
+                    name="question-first-name"
+                    value={questionFirstName}
+                    onChange={e => setQuestionFirstName(e.target.value)}
+                />
+              </div>
+              <div class="usa-form-group">
+                <label class="usa-label" id="question-last-name-label" for="question-last-name"
+                  >Last or family name (optional)</label
+                >
+                <div class="usa-hint" id="question-last-name-hint">For example, Martinez Gonzalez, Gu, or Smith</div>
+                <input 
+                    class="usa-input" 
+                    style={{width: '100%'}} 
+                    id="question-last-name" 
+                    name="question-last-name"
+                    value={questionLastName}
+                    onChange={e => setQuestionLastName(e.target.value)}
+                />
+              </div>
+              <div class="usa-form-group">
+                <label class="usa-label" id="question-email-label" for="question-email"
+                  >Email<abbr title="required" class="usa-hint usa-hint--required">*</abbr></label
+                >
+                <div class="usa-hint" id="question-email-hint">For example, name@domain.com</div>
+                <input 
+                    class="usa-input" 
+                    style={{width: '100%'}} 
+                    id="question-email" 
+                    name="question-email"
+                    value={questionEmail}
+                    onChange={e => setQuestionEmail(e.target.value)}
+                />
+              </div>
+            }
+            <div class="usa-form-group">
+              <div>Tell us more about who was harmed (optional)</div>
+              <div class="usa-hint">We use this information to track long-term trends of product use and problems.</div>
+            </div>
+            <div class="usa-form-group">
+              <fieldset class="usa-fieldset">
+                <legend class="usa-legend">Age (optional)</legend>
+                <span class="usa-hint" id="quesiton-age-hint">If you don’t know, give an approximate age.</span>
+                <div class="usa-memorable-date">
+                  <div class="usa-form-group usa-form-group--day">
+                    <input
+                      class="usa-input"
+                      aria-describedby="question-age-hint"
+                      id="question-age-number"
+                      name="question-age-number"
+                      maxlength="2"
+                      pattern="[0-9]*"
+                      inputmode="numeric"
+                      value={questionAgeNumber}
+                      onChange={e => setQuestionAgeNumber(e.target.value)}
+                    />
+                  </div>
+                  <div class="usa-form-group usa-form-group--month usa-form-group--select" style={{width: "6rem"}}>
+                    <select
+                      class="usa-select"
+                      id="question-age-unit"
+                      name="question-age-unit"
+                      aria-describedby="question-age-hint"
+                      value={questionAgeUnit}
+                      onChange={e => setQuestionAgeUnit(e.target.value)}
+                      style={{width: "6rem"}}
+                    >
+                      <option value="years">Years</option>
+                      <option value="months">Months</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="usa-form-group">
+              <fieldset class="usa-fieldset">
+                <legend class="usa-legend">Gender (optional)</legend>
+                <span class="usa-hint" id="quesiton-gender-hint">Select all that apply</span>
+                <div class="usa-checkbox">
+                  <input
+                    class="usa-checkbox__input usa-checkbox__input--tile"
+                    id="question-gender-female"
+                    type="checkbox"
+                    name="question-gender"
+                    value="female"
+                    checked={questionGender.get('female')}
+                    onChange={handleQuestionGenderChange}
+                  />
+                  <label class="usa-checkbox__label" for="question-gender-female"
+                    >Female</label>
+                </div>
+                <div class="usa-checkbox">
+                  <input
+                    class="usa-checkbox__input usa-checkbox__input--tile"
+                    id="question-gender-male"
+                    type="checkbox"
+                    name="question-gender"
+                    value="male"
+                    checked={questionGender.get('male')}
+                    onChange={handleQuestionGenderChange}
+                  />
+                  <label class="usa-checkbox__label" for="question-gender-male"
+                    >Male</label
+                  >
+                </div>
+                <div class="usa-checkbox">
+                  <input
+                    class="usa-checkbox__input usa-checkbox__input--tile"
+                    id="question-gender-trans"
+                    type="checkbox"
+                    name="question-gender"
+                    value="trans"
+                    checked={questionGender.get('trans')}
+                    onChange={handleQuestionGenderChange}
+                  />
+                  <label class="usa-checkbox__label" for="question-gender-trans"
+                    >Transgender</label
+                  >
+                </div>
+                <div class="usa-checkbox">
+                  <input
+                    class="usa-checkbox__input usa-checkbox__input--tile"
+                    id="question-gender-other"
+                    type="checkbox"
+                    name="question-gender"
+                    value="other"
+                    checked={questionGender.get('other')}
+                    onChange={handleQuestionGenderChange}
+                  />
+                  <label class="usa-checkbox__label" for="question-gender-other"
+                    >Another gender (specify)</label
+                  >
+                </div>
+                <div class="usa-checkbox">
+                  <input
+                    class="usa-checkbox__input usa-checkbox__input--tile"
+                    id="question-gender-not-specified"
+                    type="checkbox"
+                    name="question-gender"
+                    value="not-specified"
+                    checked={questionGender.get('not-specified')}
+                    onChange={handleQuestionGenderChange}
+                  />
+                  <label class="usa-checkbox__label" for="question-gender-not-specified"
+                    >Prefer not to say</label
+                  >
+                </div>
+              </fieldset>
+              { questionGender.get('other') && 
+                <input 
+                    class="usa-input" 
+                    style={{width: '100%'}} 
+                    id="question-gender-other-text" 
+                    name="question-gender-other-text"
+                    value={questionGenderOther}
+                    onChange={e => setQuestionGenderOther(e.target.value)}
+                    placeholder="Specify gender"
+                />
+              }
+            </div>
           </div>
         }
         <div style={{width: '100%', textAlign: 'right'}}>
