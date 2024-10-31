@@ -8,6 +8,7 @@ import Highlights from '../components/highlights';
 
 const IntakePage = () => {
   const [questionWhatProduct, setQuestionWhatProduct] = useState('');
+  const [questionProductPhotos, setQuestionProductPhotos] = useState('');
   const [questionTwo, setQuestionTwo] = useState('');
   const [questionThree, setQuestionThree] = useState(new Map());
   const [questionFourMonth, setQuestionFourMonth] = useState('');
@@ -163,6 +164,27 @@ const IntakePage = () => {
             >
           </div>
         </fieldset>
+        { questionWhatProduct === 'x' && 
+          <div class="usa-form-group">
+            <label class="usa-label" for="question-product-photos"
+              >Product photos (optional)</label
+            >
+            <span class="usa-hint" id="question-product-photos-hint"
+              >Select one or more photos</span
+            >
+            <input
+              id="question-product-photos"
+              class="usa-file-input"
+              type="file"
+              name="question-product-photos"
+              aria-describedby="question-product-photose-hint"
+              multiple="multiple"
+              accept="image/*"
+              value={questionProductPhotos}
+              onChange={e => setQuestionProductPhotos(e.target.value)}
+            />
+          </div>
+        }
         { questionWhatProduct === 'A' && 
           <div class="usa-form-group">
             <label class="usa-label" id="question-two-label" for="question-two"
