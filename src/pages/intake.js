@@ -563,6 +563,7 @@ const IntakePage = () => {
                   >
                 </div>
               </fieldset>
+              { questionGender.get('other') }
               { questionGender.get('other') && 
                 <input 
                     class="usa-input" 
