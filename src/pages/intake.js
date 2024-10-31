@@ -20,6 +20,7 @@ const IntakePage = () => {
   const [questionAgeNumber, setQuestionAgeNumber] = useState('');
   const [questionAgeUnit, setQuestionAgeUnit] = useState('years');
   const [questionGender, setQuestionGender] = useState(new Map());
+  const [questionGenderOther, setQuestionGenderOther] = useState('');
   const [questionWhenMonth, setQuestionWhenMonth] = useState('');
   const [questionWhenDay, setQuestionWhenDay] = useState('');
   const [questionWhenYear, setQuestionWhenYear] = useState('');
@@ -369,37 +370,39 @@ const IntakePage = () => {
                 <option value="VI">Virgin Islands</option>
               </select>
             </div>
-            <fieldset class="usa-fieldset">
-              <legend class="usa-legend usa-legend">Can we contact you with any follow up questions? (optional)</legend>
-              <div class="usa-radio">
-                <input
-                  class="usa-radio__input"
-                  id="question-can-contact-yes"
-                  type="radio"
-                  name="question-can-contact"
-                  checked={questionCanContact === 'yes'}
-                  value="yes"
-                  onChange={e => setQuestionCanContact(e.target.value)}
-                />
-                <label class="usa-radio__label" for="question-can-contact-yes"
-                  >Yes</label
-                >
-              </div>
-              <div class="usa-radio">
-                <input
-                  class="usa-radio__input"
-                  id="question-can-contact-no"
-                  type="radio"
-                  name="question-can-contact"
-                  checked={questionCanContact === 'no'}
-                  value="no"
-                  onChange={e => setQuestionCanContact(e.target.value)}
-                />
-                <label class="usa-radio__label" for="question-can-contact-no"
-                  >No</label
-                >
-              </div>
-            </fieldset>
+            <div class="usa-form-group">
+              <fieldset class="usa-fieldset">
+                <legend class="usa-legend usa-legend">Can we contact you with any follow up questions? (optional)</legend>
+                <div class="usa-radio">
+                  <input
+                    class="usa-radio__input"
+                    id="question-can-contact-yes"
+                    type="radio"
+                    name="question-can-contact"
+                    checked={questionCanContact === 'yes'}
+                    value="yes"
+                    onChange={e => setQuestionCanContact(e.target.value)}
+                  />
+                  <label class="usa-radio__label" for="question-can-contact-yes"
+                    >Yes</label
+                  >
+                </div>
+                <div class="usa-radio">
+                  <input
+                    class="usa-radio__input"
+                    id="question-can-contact-no"
+                    type="radio"
+                    name="question-can-contact"
+                    checked={questionCanContact === 'no'}
+                    value="no"
+                    onChange={e => setQuestionCanContact(e.target.value)}
+                  />
+                  <label class="usa-radio__label" for="question-can-contact-no"
+                    >No</label
+                  >
+                </div>
+              </fieldset>
+            </div>
             { questionCanContact === 'yes' && 
               <div>
                 <div class="usa-form-group">
