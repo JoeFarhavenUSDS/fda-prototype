@@ -18,7 +18,7 @@ const IndexPage = () => {
         <p>We are unable to answer questions about submitted problems. You can check the current list of recalled products here.</p>
         <p>We will reach out if we have any questions.</p>
         <div style={{width: '100%', textAlign: 'center'}}>
-          <a href="/intake"><button class="usa-button" type="button" style={{width: '100%', textAlign: 'center'}}>Get Started</button></a>
+          <a href="/site/joefarhavenusds/fda-prototype/intake"><button class="usa-button" type="button" style={{width: '100%', textAlign: 'center'}}>Get Started</button></a>
         </div>
       </form>
     </Layout>
