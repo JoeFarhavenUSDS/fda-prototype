@@ -9,11 +9,13 @@ import Highlights from '../components/highlights';
 const IntakePage = () => {
   const [questionWhatProduct, setQuestionWhatProduct] = useState('');
   const [questionProductPhotos, setQuestionProductPhotos] = useState('');
-  const [questionTwo, setQuestionTwo] = useState('');
+  const [questionProductName, setQuestionProductName] = useState('');
+  const [questionWhatHappened, setQuestionWhatHappened] = useState('');
+  const [whatHappenedCharactersRemaining, setWhatHappenedCharactersRemaining] = useState(4000);
   const [questionThree, setQuestionThree] = useState(new Map());
-  const [questionFourMonth, setQuestionFourMonth] = useState('');
-  const [questionFourDay, setQuestionFourDay] = useState('');
-  const [questionFourYear, setQuestionFourYear] = useState('');
+  const [questionWhenMonth, setQuestionWhenMonth] = useState('');
+  const [questionWhenDay, setQuestionWhenDay] = useState('');
+  const [questionWhenYear, setQuestionWhenYear] = useState('');
 
   const handleQuestionWhatProductChange = (event) => {
     setQuestionWhatProduct(event.target.value);
@@ -27,6 +29,14 @@ const IntakePage = () => {
     if (!questionWhatProduct || (questionWhatProduct === 'A' && !questionTwo)) {
       // Display an error
     }
+  };
+
+  const handleQuestionWhatHappenedChange = (event) => {
+    let whatHappened = event.target.value;
+    let whatHappenedLength = whatHappened ? whatHappened.length : 0;
+
+    setQuestionWhatHappened(whatHappened);
+    setWhatHappenedCharactersRemaining(4000 - whatHappenedLength);
   };
   
   return (
@@ -166,7 +176,7 @@ const IntakePage = () => {
         </fieldset>
         { questionWhatProduct === 'x' && 
           <div class="usa-form-group">
-            <label class="usa-label" for="question-product-photos"
+            <label class="usa-label" id="quesiton-product-photos-label" for="question-product-photos"
               >Product photos (optional)</label
             >
             <span class="usa-hint" id="quesiton-product-photos-hint-above">Include as many photos as possible, including the product, barcodes, packaging, and what was wrong.</span> 
@@ -185,20 +195,96 @@ const IntakePage = () => {
               onChange={e => setQuestionProductPhotos(e.target.value)}
             />
           </div>
-        }
-        { questionWhatProduct === 'A' && 
           <div class="usa-form-group">
-            <label class="usa-label" id="question-two-label" for="question-two"
-              ><b>Question 2<abbr title="required" class="usa-hint usa-hint--required">*</abbr></b></label
+            <label class="usa-label" id="question-product-name-label" for="question-product-name"
+              >Product name<abbr title="required" class="usa-hint usa-hint--required">*</abbr></label
             >
-            <div class="usa-hint" id="question-two-hint">Prompt text</div>
+            <div class="usa-hint" id="question-product-name-hint">Include as much detail as possible, including the brand</div>
+            <input 
+                class="usa-input" 
+                style={{width: '100%'}} 
+                id="question-product-name" 
+                name="question-product-name"
+                value={questionProductName}
+                onChange={e => setQuestionProductName(e.target.value)}
+            />
+          </div>
+          <div class="usa-form-group">
+            <label class="usa-label" id="question-what-happened-label" for="question-what-happened"
+              >What happened?<abbr title="required" class="usa-hint usa-hint--required">*</abbr></label
+            >
+            <div class="usa-hint" id="question-what-happened-hint">Include what happened, who was involved, and any actions you took.</div>
+            <div class="usa-hint" id="question-what-happened-characters-remaining">{whatHappenedCharactersRemaining} characters remaining</div>
             <textarea
               class="usa-textarea"
-              id="question-two"
-              name="question-two"
-              value={questionTwo}
-              onChange={e => setQuestionTwo(e.target.value)}
+              id="question-what-happened"
+              name="question-what-happened"
+              value={questionWhatHappened}
+              onChange={handleQuestionWhatHappenedChange}
             ></textarea>
+          </div>
+          <div class="usa-form-group">
+            <fieldset class="usa-fieldset">
+              <legend class="usa-legend">When did this happen?<abbr title="required" class="usa-hint usa-hint--required">*</abbr></legend>
+              <span class="usa-hint" id="quesiton-when-hint">If you don’t know, give an approximate date.</span>
+              <div class="usa-memorable-date">
+                <div class="usa-form-group usa-form-group--month usa-form-group--select" style={{width: "8rem"}}>
+                  <label class="usa-label" for="question-when-month">Month</label>
+                  <select
+                    class="usa-select"
+                    id="question-when-month"
+                    name="question-when-month"
+                    aria-describedby="question-when-hint"
+                    value={questionWhenMonth}
+                    onChange={e => setQuestionWhenMonth(e.target.value)}
+                    style={{width: "8rem"}}
+                  >
+                    <option value>- Select -</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                  </select>
+                </div>
+                <div class="usa-form-group usa-form-group--day">
+                  <label class="usa-label" for="question-when-day">Day</label>
+                  <input
+                    class="usa-input"
+                    aria-describedby="question-when-hint"
+                    id="question-when-day"
+                    name="question-when-day"
+                    maxlength="2"
+                    pattern="[0-9]*"
+                    inputmode="numeric"
+                    value={questionWhenDay}
+                    onChange={e => setQuestionWhenDay(e.target.value)}
+                  />
+                </div>
+                <div class="usa-form-group usa-form-group--year">
+                  <label class="usa-label" for="question-when-year">Year</label>
+                  <input
+                    class="usa-input"
+                    aria-describedby="question-when-hint"
+                    id="question-when-year"
+                    name="question-when-year"
+                    minlength="4"
+                    maxlength="4"
+                    pattern="[0-9]*"
+                    inputmode="numeric"
+                    value={questionWhenYear}
+                    onChange={e => setQuestionWhenYear(e.target.value)}
+                  />
+                </div>
+              </div>
+            </fieldset>
           </div>
         }
         { questionWhatProduct === 'B' && 
@@ -245,71 +331,6 @@ const IntakePage = () => {
                 <label class="usa-checkbox__label" for="question-three-C"
                   >Option C</label
                 >
-              </div>
-            </fieldset>
-          </div>
-        }
-        { questionWhatProduct === 'D' && 
-          <div class="usa-form-group">
-            <fieldset class="usa-fieldset">
-              <legend class="usa-legend"><b>Question 4</b></legend>
-              <span class="usa-hint" id="quesiton-four-hint">For example: January 19 2000</span>
-              <div class="usa-memorable-date">
-                <div class="usa-form-group usa-form-group--month usa-form-group--select" style={{width: "8rem"}}>
-                  <label class="usa-label" for="question-four-month">Month</label>
-                  <select
-                    class="usa-select"
-                    id="question-four-month"
-                    name="question-four-month"
-                    aria-describedby="question-four-hint"
-                    value={questionFourMonth}
-                    onChange={e => setQuestionFourMonth(e.target.value)}
-                    style={{width: "8rem"}}
-                  >
-                    <option value>- Select -</option>
-                    <option value="1">January</option>
-                    <option value="2">February</option>
-                    <option value="3">March</option>
-                    <option value="4">April</option>
-                    <option value="5">May</option>
-                    <option value="6">June</option>
-                    <option value="7">July</option>
-                    <option value="8">August</option>
-                    <option value="9">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
-                  </select>
-                </div>
-                <div class="usa-form-group usa-form-group--day">
-                  <label class="usa-label" for="question-four-day">Day</label>
-                  <input
-                    class="usa-input"
-                    aria-describedby="question-four-hint"
-                    id="question-four-day"
-                    name="question-four-day"
-                    maxlength="2"
-                    pattern="[0-9]*"
-                    inputmode="numeric"
-                    value={questionFourDay}
-                    onChange={e => setQuestionFourDay(e.target.value)}
-                  />
-                </div>
-                <div class="usa-form-group usa-form-group--year">
-                  <label class="usa-label" for="question-four-year">Year</label>
-                  <input
-                    class="usa-input"
-                    aria-describedby="question-four-hint"
-                    id="question-four-year"
-                    name="question-four-year"
-                    minlength="4"
-                    maxlength="4"
-                    pattern="[0-9]*"
-                    inputmode="numeric"
-                    value={questionFourYear}
-                    onChange={e => setQuestionFourYear(e.target.value)}
-                  />
-                </div>
               </div>
             </fieldset>
           </div>
