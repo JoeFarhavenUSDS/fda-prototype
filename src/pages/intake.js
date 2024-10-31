@@ -7,15 +7,15 @@ import Tagline from '../components/tagline';
 import Highlights from '../components/highlights';
 
 const IntakePage = () => {
-  const [questionOne, setQuestionOne] = useState('');
+  const [questionWhatProduct, setQuestionWhatProduct] = useState('');
   const [questionTwo, setQuestionTwo] = useState('');
   const [questionThree, setQuestionThree] = useState(new Map());
   const [questionFourMonth, setQuestionFourMonth] = useState('');
   const [questionFourDay, setQuestionFourDay] = useState('');
   const [questionFourYear, setQuestionFourYear] = useState('');
 
-  const handleQuestionOneChange = (event) => {
-    setQuestionOne(event.target.value);
+  const handleQuestionWhatProductChange = (event) => {
+    setQuestionWhatProduct(event.target.value);
   };
 
   const handleQuestionThreeChange = (event) => {
@@ -23,7 +23,7 @@ const IntakePage = () => {
   };
 
   const handleNextClickScreen1 = (event) => {
-    if (!questionOne || (questionOne === 'A' && !questionTwo)) {
+    if (!questionWhatProduct || (questionWhatProduct === 'A' && !questionTwo)) {
       // Display an error
     }
   };
@@ -33,67 +33,137 @@ const IntakePage = () => {
       <SEO title="Home" />
       <form class="usa-form usa-form--large padding-9" style={{paddingTop: '0'}}>
         <h1>Report a problem</h1>
-        <p>Here's where we set expectations of what we will do with reports, and what folks can expect.</p>
+        <p>Required fields are marked with an asterisk (<abbr title="required" class="usa-hint usa-hint--required">*</abbr>).</p>
         <fieldset class="usa-fieldset">
-          <legend class="usa-legend usa-legend"><b>Question 1<abbr title="required" class="usa-hint usa-hint--required">*</abbr></b></legend>
+          <legend class="usa-legend usa-legend"><b>What was the product?<abbr title="required" class="usa-hint usa-hint--required">*</abbr></b></legend>
           <div class="usa-radio">
             <input
               class="usa-radio__input"
-              id="question-one-A"
+              id="question-what-product-cosmetic"
               type="radio"
-              name="question-one"
-              checked={questionOne === 'A'}
-              value="A"
-              onChange={handleQuestionOneChange}
+              name="question-what-product"
+              checked={questionWhatProduct === 'cosmetic'}
+              value="cosmetic"
+              onChange={handleQuestionWhatProductChange}
             />
-            <label class="usa-radio__label" for="question-one-A"
-              >Option A</label
+            <label class="usa-radio__label" for="question-what-product-cosmetic"
+              >Cosmetic</label
             >
           </div>
           <div class="usa-radio">
             <input
               class="usa-radio__input"
-              id="question-one-B"
+              id="question-what-product-drug-vaccine"
               type="radio"
-              name="question-one"
-              checked={questionOne === 'B'}
-              value="B"
-              onChange={handleQuestionOneChange}
+              name="question-what-product"
+              checked={questionWhatProduct === 'drug-vaccine'}
+              value="drug-vaccine"
+              onChange={handleQuestionWhatProductChange}
             />
-            <label class="usa-radio__label" for="question-one-B"
-              >Option B</label
+            <label class="usa-radio__label" for="question-what-product-drug-vaccine"
+              >Drug or Vaccine</label
             >
           </div>
           <div class="usa-radio">
             <input
               class="usa-radio__input"
-              id="question-one-C"
+              id="question-what-product-dietary-supplement"
               type="radio"
-              name="question-one"
-              checked={questionOne === 'C'}
-              value="C"
-              onChange={handleQuestionOneChange}
+              name="question-what-product"
+              checked={questionWhatProduct === 'dietary-supplement'}
+              value="dietary-supplement"
+              onChange={handleQuestionWhatProductChange}
             />
-            <label class="usa-radio__label" for="question-one-C"
-              >Option C</label
+            <label class="usa-radio__label" for="question-what-product-dietary-supplement"
+              >Dietary Supplement</label
             >
           </div>
           <div class="usa-radio">
             <input
               class="usa-radio__input"
-              id="question-one-D"
+              id="question-what-product-food"
               type="radio"
-              name="question-one"
-              checked={questionOne === 'D'}
-              value="D"
-              onChange={handleQuestionOneChange}
+              name="question-what-product"
+              checked={questionWhatProduct === 'food'}
+              value="food"
+              onChange={handleQuestionWhatProductChange}
             />
-            <label class="usa-radio__label" for="question-one-D"
-              >Option D</label
+            <label class="usa-radio__label" for="question-what-product-food"
+              >Food</label
+            >
+          </div>
+          <div class="usa-radio">
+            <input
+              class="usa-radio__input"
+              id="question-what-product-medical-device"
+              type="radio"
+              name="question-what-product"
+              checked={questionWhatProduct === 'medical-device'}
+              value="medical-device"
+              onChange={handleQuestionWhatProductChange}
+            />
+            <label class="usa-radio__label" for="question-what-product-medical-device"
+              >Medical Device</label
+            >
+          </div>
+          <div class="usa-radio">
+            <input
+              class="usa-radio__input"
+              id="question-what-product-x"
+              type="radio"
+              name="question-what-product"
+              checked={questionWhatProduct === 'x'}
+              value="x"
+              onChange={handleQuestionWhatProductChange}
+            />
+            <label class="usa-radio__label" for="question-what-product-x"
+              >[Product X]</label
+            >
+          </div>
+          <div class="usa-radio">
+            <input
+              class="usa-radio__input"
+              id="question-what-product-tobacco"
+              type="radio"
+              name="question-what-product"
+              checked={questionWhatProduct === 'tobacco'}
+              value="tobacco"
+              onChange={handleQuestionWhatProductChange}
+            />
+            <label class="usa-radio__label" for="question-what-product-tobacco"
+              >Tobacco</label
+            >
+          </div>
+          <div class="usa-radio">
+            <input
+              class="usa-radio__input"
+              id="question-what-product-vet"
+              type="radio"
+              name="question-what-product"
+              checked={questionWhatProduct === 'vet'}
+              value="vet"
+              onChange={handleQuestionWhatProductChange}
+            />
+            <label class="usa-radio__label" for="question-what-product-vet"
+              >Veterinary (Pet Food and Drugs)</label
+            >
+          </div>
+          <div class="usa-radio">
+            <input
+              class="usa-radio__input"
+              id="question-what-product-other"
+              type="radio"
+              name="question-what-product"
+              checked={questionWhatProduct === 'other'}
+              value="other"
+              onChange={handleQuestionWhatProductChange}
+            />
+            <label class="usa-radio__label" for="question-what-product-other"
+              >Other / Don't Know</label
             >
           </div>
         </fieldset>
-        { questionOne === 'A' && 
+        { questionWhatProduct === 'A' && 
           <div class="usa-form-group">
             <label class="usa-label" id="question-two-label" for="question-two"
               ><b>Question 2<abbr title="required" class="usa-hint usa-hint--required">*</abbr></b></label
@@ -108,7 +178,7 @@ const IntakePage = () => {
             ></textarea>
           </div>
         }
-        { questionOne === 'B' && 
+        { questionWhatProduct === 'B' && 
           <div class="usa-form-group">
             <fieldset class="usa-fieldset">
               <legend class="usa-legend"><b>Question 3</b> <span class="usa-hint">(optional)</span></legend>
@@ -156,7 +226,7 @@ const IntakePage = () => {
             </fieldset>
           </div>
         }
-        { questionOne === 'D' && 
+        { questionWhatProduct === 'D' && 
           <div class="usa-form-group">
             <fieldset class="usa-fieldset">
               <legend class="usa-legend"><b>Question 4</b></legend>
