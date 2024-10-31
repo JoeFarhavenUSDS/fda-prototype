@@ -36,7 +36,7 @@ const IntakePage = () => {
         <h1>Report a problem</h1>
         <p>Required fields are marked with an asterisk (<abbr title="required" class="usa-hint usa-hint--required">*</abbr>).</p>
         <fieldset class="usa-fieldset">
-          <legend class="usa-legend usa-legend"><b>What was the product?<abbr title="required" class="usa-hint usa-hint--required">*</abbr></b></legend>
+          <legend class="usa-legend usa-legend">What was the product?<abbr title="required" class="usa-hint usa-hint--required">*</abbr></legend>
           <div class="usa-radio">
             <input
               class="usa-radio__input"
@@ -169,6 +169,7 @@ const IntakePage = () => {
             <label class="usa-label" for="question-product-photos"
               >Product photos (optional)</label
             >
+            <span class="usa-hint" id="quesiton-product-photos-hint-above">Include as many photos as possible, including the product, barcodes, packaging, and what was wrong.</span> 
             <span class="usa-hint" id="question-product-photos-hint"
               >Select one or more photos</span
             >
