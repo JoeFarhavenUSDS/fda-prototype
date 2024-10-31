@@ -401,47 +401,49 @@ const IntakePage = () => {
               </div>
             </fieldset>
             { questionCanContact === 'yes' && 
-              <div class="usa-form-group">
-                <label class="usa-label" id="question-first-name-label" for="question-first-name"
-                  >First or given name (optional)</label
-                >
-                <div class="usa-hint" id="question-first-name-hint">For example, Jose, Darren, or Mai</div>
-                <input 
-                    class="usa-input" 
-                    style={{width: '100%'}} 
-                    id="question-first-name" 
-                    name="question-first-name"
-                    value={questionFirstName}
-                    onChange={e => setQuestionFirstName(e.target.value)}
-                />
-              </div>
-              <div class="usa-form-group">
-                <label class="usa-label" id="question-last-name-label" for="question-last-name"
-                  >Last or family name (optional)</label
-                >
-                <div class="usa-hint" id="question-last-name-hint">For example, Martinez Gonzalez, Gu, or Smith</div>
-                <input 
-                    class="usa-input" 
-                    style={{width: '100%'}} 
-                    id="question-last-name" 
-                    name="question-last-name"
-                    value={questionLastName}
-                    onChange={e => setQuestionLastName(e.target.value)}
-                />
-              </div>
-              <div class="usa-form-group">
-                <label class="usa-label" id="question-email-label" for="question-email"
-                  >Email<abbr title="required" class="usa-hint usa-hint--required">*</abbr></label
-                >
-                <div class="usa-hint" id="question-email-hint">For example, name@domain.com</div>
-                <input 
-                    class="usa-input" 
-                    style={{width: '100%'}} 
-                    id="question-email" 
-                    name="question-email"
-                    value={questionEmail}
-                    onChange={e => setQuestionEmail(e.target.value)}
-                />
+              <div>
+                <div class="usa-form-group">
+                  <label class="usa-label" id="question-first-name-label" for="question-first-name"
+                    >First or given name (optional)</label
+                  >
+                  <div class="usa-hint" id="question-first-name-hint">For example, Jose, Darren, or Mai</div>
+                  <input 
+                      class="usa-input" 
+                      style={{width: '100%'}} 
+                      id="question-first-name" 
+                      name="question-first-name"
+                      value={questionFirstName}
+                      onChange={e => setQuestionFirstName(e.target.value)}
+                  />
+                </div>
+                <div class="usa-form-group">
+                  <label class="usa-label" id="question-last-name-label" for="question-last-name"
+                    >Last or family name (optional)</label
+                  >
+                  <div class="usa-hint" id="question-last-name-hint">For example, Martinez Gonzalez, Gu, or Smith</div>
+                  <input 
+                      class="usa-input" 
+                      style={{width: '100%'}} 
+                      id="question-last-name" 
+                      name="question-last-name"
+                      value={questionLastName}
+                      onChange={e => setQuestionLastName(e.target.value)}
+                  />
+                </div>
+                <div class="usa-form-group">
+                  <label class="usa-label" id="question-email-label" for="question-email"
+                    >Email<abbr title="required" class="usa-hint usa-hint--required">*</abbr></label
+                  >
+                  <div class="usa-hint" id="question-email-hint">For example, name@domain.com</div>
+                  <input 
+                      class="usa-input" 
+                      style={{width: '100%'}} 
+                      id="question-email" 
+                      name="question-email"
+                      value={questionEmail}
+                      onChange={e => setQuestionEmail(e.target.value)}
+                  />
+                </div>
               </div>
             }
             <div class="usa-form-group">
