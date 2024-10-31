@@ -30,7 +30,7 @@ const IntakePage = () => {
   };
 
   const handleQuestionGenderChange = (event) => {
-    setQuestionGender({...questionGender, [event.target.value] : event.target.checked });
+    // setQuestionGender({...questionGender, [event.target.value] : event.target.checked });
   };
 
   const handleNextClickScreen1 = (event) => {
